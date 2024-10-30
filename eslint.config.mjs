@@ -42,12 +42,21 @@ export default [
             'react/display-name': 'off',
             'react/prop-types': 'off',
             'newline-before-return': 'error',
-            '@typescript-eslint/no-unused-vars': 'off',
+            '@typescript-eslint/no-unused-vars': 'error',
             '@typescript-eslint/no-unused-expressions': 'off',
             'tailwindcss/no-custom-classname': 'off',
             'tailwindcss/migration-from-tailwind-2': 'off',
             'import/no-unresolved': 'off',
-            'import/no-named-as-default': 'off'
+            'import/no-named-as-default': 'off',
+            'import/no-unused-modules': [
+                1,
+                {
+                    unusedExports: true,
+                    missingExports: true,
+                    ignoreExports: ['**/pages/**', '**/app/**', '**/layout.tsx', '**/**.config.{js,ts,mjs}']
+                }
+            ],
+            'unused-imports/no-unused-imports': 'error'
         }
     },
     // ! ===================== DISCLAIMER =====================
