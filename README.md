@@ -95,48 +95,43 @@ To enhance development experience, install the following VS Code extensions:
     ```
 
 
-### 🗄️ Database Commands
+### 🗄️ Database Setup
 
-To work with the PostgreSQL database using Prisma:
+1. **Environment Setup**:
+   Create a `.env` file in the root directory:
+   ```env
+   DATABASE_URL="postgresql://postgres:postgres@localhost:5432/starter"
+   ```
 
-1. **Generate Prisma Client**:
-    ```bash
-    npx prisma generate
-    ```
+2. **Start Database**:
+   ```bash
+   docker-compose up -d
+   ```
 
-2. **Create/Update Database Schema**:
-    ```bash
-    npx prisma migrate dev --name init
-    ```
+3. **Database Commands**:
+   ```bash
+   # Generate Prisma Client
+   npx prisma generate
 
-3. **Reset Database**:
-    ```bash
-    npx prisma migrate reset
-    ```
+   # Create/Update Database Schema
+   npx prisma migrate dev
 
-4. **Seed Database**:
-    ```bash
-    npm run db:seed
-    ```
+   # Reset Database
+   npx prisma migrate reset
 
-5. **View Database with Prisma Studio**:
-    ```bash
-    npx prisma studio
-    ```
+   # Seed Database
+   npm run db:seed
 
-6. **Format Schema File**:
-    ```bash
-    npx prisma format
-    ```
+   # View Database with Prisma Studio
+   npx prisma studio
+   ```
 
-7. **Check Database Status**:
-    ```bash
-    npx prisma db pull
-    ```
-
-8. **Push Schema Changes Without Migration**:
-    ```bash
-    npx prisma db push
+4. **Models Available**:
+   - Users (with profiles)
+   - Posts
+   - Comments (with nested replies)
+   - Likes
+   - Follows
 
 ### 🐳 Docker Setup
 
