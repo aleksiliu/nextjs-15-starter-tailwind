@@ -11,11 +11,14 @@
         "lint": "next lint",
         "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
         "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-        "fix:imports": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\" && tsc --noEmit"
+        "fix:imports": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\" && tsc --noEmit",
+        "db:seed": "npx prisma db seed"
     },
     "dependencies": {
+        "@prisma/client": "^5.21.1",
         "next": "15.0.2",
         "next-themes": "^0.3.0",
+        "prisma": "^5.21.1",
         "react": "19.0.0-rc-69d4b800-20241021",
         "react-dom": "19.0.0-rc-69d4b800-20241021"
     },
@@ -40,11 +43,15 @@
         "prettier-plugin-tailwindcss": "^0.6.8",
         "tailwindcss": "^3.4.14",
         "tailwindcss-animate": "^1.0.7",
+        "ts-node": "^10.9.2",
         "typescript": "^5.6.3",
         "typescript-eslint": "^8.12.2"
     },
     "overrides": {
         "@types/react": "npm:types-react@19.0.0-rc.1",
         "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+    },
+    "prisma": {
+        "seed": "npx ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
     }
 }
